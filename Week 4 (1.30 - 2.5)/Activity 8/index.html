@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 Project Starter Template</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>    
+    <!-- Add HTML content, SVG drawing area, ... -->
+
+    <ul class="legend">
+        <li class="legend-btn" category="tropical-cyclone"><span class="legend-symbol"></span> Tropical Cyclone</li>
+        <li class="legend-btn" category="drought-wildfire"><span class="legend-symbol"></span> Drought Wildfire</li>
+        <li class="legend-btn" category="severe-storm"><span class="legend-symbol"></span> Severe Storm</li>
+        <li class="legend-btn" category="flooding"><span class="legend-symbol"></span> Flooding</li>
+    </ul>
+
+    <svg id="timeline"></svg>
+
+    <div id="tooltip"></div>
+
+
+ 
+    <!-- D3 bundle -->
+    <script src="js/d3.v6.min.js"></script>
+
+    <!-- Our JS code - INCLUDING the new files-->
+    <script src="js/main.js"></script>
+    <script src="js/timelineCircles.js"></script> 
+
+
+</body>
+</html>
