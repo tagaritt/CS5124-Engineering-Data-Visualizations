@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- TAB INFO -->
+    <title>Project 3</title>
+    <link rel="icon" href="./icons8-autodesk-3ds-max-120.png">
+
+    <!-- METADATA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLING -->
+    <link rel="stylesheet" href="./CSS/style.css">
+
+    <!-- SCRIPT ENABLEMENT -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body onload="main()">
+    <!-- DROPDOWN FOR CHARACTER SELECTION -->
+    <!-- "CharacterList" formerly "fruityDropdown" -->
+    <div id="characterDropdown">
+        <select id="speaker">
+            <option value="Michael">Michael Scott</option>
+            <option value="Dwight">Dwight Schrute</option>
+            <option value="Jim">Jim Halpert</option>
+            <option value="Pam">Pam Beesly</option>
+            <option value="Ryan">Ryan Howard</option>
+            <option value="Stanley">Stanley Hudson</option>
+            <option value="Kevin">Kevin Malone</option>
+            <option value="Meredith">Meredith Palmer</option>
+            <option value="Angela">Angela Martin</option>
+            <option value="Oscar">Oscar Martinez</option>
+            <option value="Phyllis">Phyllis Vance</option>
+            <option value="Roy">Roy Anderson</option>
+            <option value="Jan">Jan Levinson</option>
+            <option value="Toby">Toby Flenderson</option>
+            <option value="Kelly">Kelly Kapoor</option>
+            <option value="Andy">Andy Bernard</option>
+            <option value="Creed">Creed Bratton</option>
+            <option value="Erin">Erin Hannon</option>
+            <option value="Gabe">Gabe Lewis</option>
+            <option value="Holly">Holly Flax</option>
+            <option value="Robert">Robert California</option>
+            <option value="Nellie">Nellie Bertram</option>
+            <option value="Clark">Clark Green</option>
+            <option value="Pete">Pete Miller</option>
+        </select>
+    </div>
+
+    <!-- DROPDOWN FOR SEASON SELECTION -->
+    <!-- "SeasonsList" formerly "yearDropdown" -->
+    <div id="seasonDropdown">
+        <select id="season">
+            <option value="1">Season 1</option>
+            <option value="2">Season 2</option>
+            <option value="3">Season 3</option>
+            <option value="4">Season 4</option>
+            <option value="5">Season 5</option>
+            <option value="6">Season 6</option>
+            <option value="7">Season 7</option>
+            <option value="8">Season 8</option>
+            <option value="9">Season 9</option>
+        </select>
+    </div>
+
+    <h2>A line chart showing how many spoken appearnaecs this character had per episode this season.</h2>
+    <div id="graph">
+        <svg width="100%" height="100%" style="width: 1600px; height: 900px;">
+            <g transform="translate(80,60)" class="svg">
+                <g transform="translate(0,290)" class="x axis" fill="none" font-size="10" font-family="sans-serif" text-anchor="middle">
+                    <path class="domain" stroke="#000" d="M0.5,0V0.5H670.5V0"></path>
+                    <g class="tick" opacity="1" transform="translate(0,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 1</text></g>
+                    <g class="tick" opacity="1" transform="translate(57.1428571429,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 2</text></g>
+                    <g class="tick" opacity="1" transform="translate(114.285714286,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 3</text></g>
+                    <g class="tick" opacity="1" transform="translate(171.428571429,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 4</text></g>
+                    <g class="tick" opacity="1" transform="translate(228.571428572,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 5</text></g>
+                    <g class="tick" opacity="1" transform="translate(285.714285714,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 6</text></g>
+                    <g class="tick" opacity="1" transform="translate(342.857142857,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 7</text></g>
+                    <g class="tick" opacity="1" transform="translate(400,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 8</text></g>
+                    <g class="tick" opacity="1" transform="translate(457.142857143,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 9</text></g>
+                    <g class="tick" opacity="1" transform="translate(514.285714286,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 10</text></g>
+                    <g class="tick" opacity="1" transform="translate(571.428571429,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 11</text></g>
+                    <g class="tick" opacity="1" transform="translate(628.571428572,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 12</text></g>
+                    <g class="tick" opacity="1" transform="translate(685.714285715,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 13</text></g>
+                    <g class="tick" opacity="1" transform="translate(742.857142858,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 14</text></g>
+                    <g class="tick" opacity="1" transform="translate(800,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 15</text></g>
+                    <g class="tick" opacity="1" transform="translate(857.142857144,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 16</text></g>
+                    <g class="tick" opacity="1" transform="translate(914.285714286,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 17</text></g>
+                    <g class="tick" opacity="1" transform="translate(971.428571429,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 18</text></g>
+                    <g class="tick" opacity="1" transform="translate(1028.57142857,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 19</text></g>
+                    <g class="tick" opacity="1" transform="translate(1085.71428572,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 20</text></g>
+                    <g class="tick" opacity="1" transform="translate(1142.85714286,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 21</text></g>
+                    <g class="tick" opacity="1" transform="translate(1200,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 22</text></g>
+                    <g class="tick" opacity="1" transform="translate(1257.14285714,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 23</text></g>
+                    <g class="tick" opacity="1" transform="translate(1314.28571429,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 24</text></g>
+                    <g class="tick" opacity="1" transform="translate(1371.42857143,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 25</text></g>
+                    <g class="tick" opacity="1" transform="translate(1428.57142857,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 26</text></g>
+                    <g class="tick" opacity="1" transform="translate(1485.71428572,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 27</text></g>
+                    <g class="tick" opacity="1" transform="translate(1542.85714286,0)"><line stroke="#000" y2="0"></line><text fill="#000" y="10" dy="0.71em">Ep. 28</text></g>
+                </g>
+                <g class="fruitGroups">
+                    <path d="M0,180.0806451612903L62.185628742514965,272.4596774193548L118.35329341317366,178.91129032258064L180.53892215568862,215.16129032258064L240.7185628742515,277.13709677419354L302.90419161676647,251.41129032258064L363.08383233532936,215.16129032258064L425.2694610778443,228.0241935483871L487.4550898203593,258.4274193548387L547.6347305389221,169.55645161290323L609.820359281437,163.70967741935482L670,217.5" class="line"></path>
+                    <path d="M0,221.00806451612902L62.185628742514965,204.63709677419354L118.35329341317366,125.12096774193546L180.53892215568862,36.25L240.7185628742515,168.38709677419354L302.90419161676647,162.54032258064518L363.08383233532936,0L425.2694610778443,257.258064516129L487.4550898203593,160.20161290322582L547.6347305389221,188.26612903225805L609.820359281437,195.28225806451613L670,273.6290322580645" class="line"></path>
+                    <path d="M0,49.112903225806434L62.185628742514965,204.63709677419354L118.35329341317366,142.66129032258064L180.53892215568862,266.61290322580646L240.7185628742515,219.83870967741936L302.90419161676647,261.93548387096774L363.08383233532936,0L425.2694610778443,70.16129032258064L487.4550898203593,258.4274193548387L547.6347305389221,78.34677419354838L609.820359281437,268.9516129032258L670,16.370967741935488" class="line"></path>
+                    <path d="M0,197.6209677419355L62.185628742514965,290L118.35329341317366,198.79032258064518L180.53892215568862,232.7016129032258L240.7185628742515,284.1532258064516L302.90419161676647,253.75L363.08383233532936,217.5L425.2694610778443,232.7016129032258L487.4550898203593,281.81451612903226L547.6347305389221,189.43548387096774L609.820359281437,173.06451612903226L670,236.20967741935485" class="line selected"></path>
+                </g>
+                <g class="y axis" fill="none" font-size="10" font-family="sans-serif" text-anchor="end">
+                    <path class="domain" stroke="#000" d="M0,290.5H0.5V0.5H0"></path><g class="tick" opacity="1" transform="translate(0,290.5)"><line stroke="#000" x2="0"></line><text fill="#000" x="-6" dy="0.32em">0</text></g>
+                        <g class="tick" opacity="1" transform="translate(0, 232.03225708007812)"><line stroke="#000" x2="0"></line><text fill="#000" x="-6" dy="0.32em">50</text></g>
+                        <g class="tick" opacity="1" transform="translate(0, 173.56451416015625)"><line stroke="#000" x2="0"></line><text fill="#000" x="-6" dy="0.32em">100</text></g>
+                        <g class="tick" opacity="1" transform="translate(0, 115.09677124023438)"><line stroke="#000" x2="0"></line><text fill="#000" x="-6" dy="0.32em">150</text></g>
+                        <g class="tick" opacity="1" transform="translate(0, 56.629032135009766)"><line stroke="#000" x2="0"></line><text fill="#000" x="-6" dy="0.32em">200</text></g>
+                    </g>
+                    <text transform="rotate(-90)" y="-60" x="-145" dy="1em" class="y axis label" style="text-anchor: middle;"># of Lines</text>
+                    <text transform="rotate(0)" y="325" x="325" dy="1em" class="x axis label" style="text-anchor: middle;">Episodes</text>
+                </g>
+            </svg>
+    </div>
+
+    <!-- GRAPH -->
+    <svg id="s_a_linechart"></svg>
+
+    <div class="sourcing_info">
+        <p>All data involved with this project originated from a Kaggle dataset of The Office's Complete Transcript made by Nasir Khalid, and can be found here: <a href="http://www.kaggle.com/datasets/nasirkhalid24/the-office-us-complete-dialoguetranscript"> The Office (US) - Complete Dialogue/Transcript</a></p>
+    </div>
+
+    <!-- SCRIPTS FOR DATA SOURCING -->
+    <script src="main.js"></script>
+    <script src="JS/data.js"></script>
+    <script src="JS/stats.js"></script>
+</body>
+
+</html>
