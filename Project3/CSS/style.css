@@ -1,32 +1,20 @@
-.line {
-    fill: none;
-    stroke: #999999;
-    stroke-width: 2px;
-}
-
-.selected {
-    stroke: #EF5285;
-}
-
-path {
-    stroke: blue;
-    stroke-width: 2px;
-    fill: none;
-}
-
-.seasonDropdown,
-.characterDropdown {
-    width: 30px;
-    padding: 10px;
-    margin: 10px;
-}
-
-svg rect {
-    fill: lightcoral;
-}
-
-svg text {
-    fill: lightseagreen;
-    font: 10px sans-serif;
-    text-anchor: end;
-}
+  body {
+      font: 10px sans-serif;
+      background-image: url(./Data/free-zoom-backgrounds.svg);
+  }
+  
+  select {
+      display: block;
+  }
+  
+  .bar {
+      fill: purple;
+      opacity: 0.8;
+  }
+  
+  .axis path,
+  .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+  }
